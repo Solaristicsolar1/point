@@ -1,7 +1,7 @@
 package piscine
 
 func RetainFirstHalf(str string) string {
-	n := len(str)
+	var n = len(str)
 
 	if n == 0 {
 		return ""
@@ -10,7 +10,7 @@ func RetainFirstHalf(str string) string {
 		return str
 	}
 
-	half := n / 2
+	var half = n / 2
 	return str[:half]
 }
 
