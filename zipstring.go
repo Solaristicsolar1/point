@@ -25,14 +25,11 @@ func ZipString(s string) string {
 		}
 	}
 
-	return result
+	return result + "\n"
 }
 
 func main() {
 	fmt.Print(ZipString("YouuungFellllas"))
-	fmt.Print("\n")
 	fmt.Print(ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
-	fmt.Print("\n")
 	fmt.Print(ZipString("Helloo Therre!"))
-	fmt.Print("\n")
 }
