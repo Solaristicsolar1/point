@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func ZipString(s string) string {
@@ -13,12 +14,13 @@ func ZipString(s string) string {
 	count := 1
 
 	for i := 0; i < len(s); i++ {
-		// If next character is the same, increase count
+		// count duplicates
 		if i+1 < len(s) && s[i] == s[i+1] {
 			count++
 		} else {
-			// Character series ended → write count + character
-			result += fmt.Sprintf("%d%c", count, s[i])
+			// convert number to string with strconv.Itoa
+			result += strconv.Itoa(count)
+			result += string(s[i])
 			count = 1
 		}
 	}
@@ -27,7 +29,10 @@ func ZipString(s string) string {
 }
 
 func main() {
-	fmt.Println(ZipString("YouuungFellllas"))
-	fmt.Println(ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
-	fmt.Println(ZipString("Helloo Therre!"))
+	fmt.Print(ZipString("YouuungFellllas"))
+	fmt.Print("\n")
+	fmt.Print(ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
+	fmt.Print("\n")
+	fmt.Print(ZipString("Helloo Therre!"))
+	fmt.Print("\n")
 }
